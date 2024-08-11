@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<school xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.example.com/school"
+        xsi:schemaLocation="http://www.example.com/school assignement4.xsd">
+    <students>
+        <student id="S001">
+            <name>John Doe</name>
+            <age>15</age>
+            <grade>10</grade>
+            <address>
+                <street>Main St</street>
+                <city>Springfield</city>
+                <zip>12345</zip>
+            </address>
+        </student>
+        <student id="S002">
+            <name>Jane Smith</name>
+            <age>16</age>
+            <grade>11</grade>
+            <address>
+                <street>Second St</street>
+                <city>Shelbyville</city>
+                <zip>67890</zip>
+            </address>
+        </student>
+    </students>
+    <teachers>
+        <teacher id="T001">
+            <name>Mr. Brown</name>
+            <subject>Mathematics</subject>
+            <years_of_experience>10</years_of_experience>
+        </teacher>
+        <teacher id="T002">
+            <name>Ms. Green</name>
+            <subject>Science</subject>
+            <years_of_experience>8</years_of_experience>
+        </teacher>
+    </teachers>
+    <courses>
+        <course id="C001">
+            <title>Algebra</title>
+            <credits>3</credits>
+        </course>
+        <course id="C002">
+            <title>Biology</title>
+            <credits>4</credits>
+        </course>
+    </courses>
+    <classes>
+        <class id="CL001">
+            <course_id>C001</course_id>
+            <teacher_id>T001</teacher_id>
+            <schedule>Mon-Fri 10:00-11:00</schedule>
+        </class>
+        <class id="CL002">
+            <course_id>C002</course_id>
+            <teacher_id>T002</teacher_id>
+            <schedule>Mon-Wed 13:00-14:30</schedule>
+        </class>
+    </classes>
+</school>
