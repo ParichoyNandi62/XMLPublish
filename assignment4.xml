@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<school xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns="http://www.example.com/school"
-        xsi:schemaLocation="http://www.example.com/school assignement4.xsd">
+<school xmlns="http://www.example.com/school"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.example.com/school assignment4.xsd">
     <students>
         <student id="S001">
             <name>John Doe</name>
@@ -23,6 +23,16 @@
                 <zip>67890</zip>
             </address>
         </student>
+        <student id="S003">
+            <name>Michael Johnson</name>
+            <age>14</age>
+            <grade>9</grade>
+            <address>
+                <street>Third St</street>
+                <city>Capital City</city>
+                <zip>54321</zip>
+            </address>
+        </student>
     </students>
     <teachers>
         <teacher id="T001">
@@ -35,6 +45,11 @@
             <subject>Science</subject>
             <years_of_experience>8</years_of_experience>
         </teacher>
+        <teacher id="T003">
+            <name>Dr. White</name>
+            <subject>History</subject>
+            <years_of_experience>12</years_of_experience>
+        </teacher>
     </teachers>
     <courses>
         <course id="C001">
@@ -44,6 +59,10 @@
         <course id="C002">
             <title>Biology</title>
             <credits>4</credits>
+        </course>
+        <course id="C003">
+            <title>World History</title>
+            <credits>3</credits>
         </course>
     </courses>
     <classes>
@@ -57,5 +76,24 @@
             <teacher_id>T002</teacher_id>
             <schedule>Mon-Wed 13:00-14:30</schedule>
         </class>
+        <class id="CL003">
+            <course_id>C003</course_id>
+            <teacher_id>T003</teacher_id>
+            <schedule>Tue-Thu 09:00-10:30</schedule>
+        </class>
     </classes>
+    <departments>
+        <department id="D001">
+            <name>Mathematics Department</name>
+            <location>Building A</location>
+        </department>
+        <department id="D002">
+            <name>Science Department</name>
+            <location>Building B</location>
+        </department>
+        <department id="D003">
+            <name>History Department</name>
+            <location>Building C</location>
+        </department>
+    </departments>
 </school>

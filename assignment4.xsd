@@ -4,6 +4,19 @@
            targetNamespace="http://www.example.com/school"
            elementFormDefault="qualified">
 
+    <xs:simpleType name="ageType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="5"/>
+            <xs:maxInclusive value="18"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="creditsType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+
     <xs:element name="school">
         <xs:complexType>
             <xs:sequence>
@@ -14,8 +27,8 @@
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="name" type="xs:string"/>
-                                        <xs:element name="age" type="xs:integer"/>
-                                        <xs:element name="grade" type="xs:string"/>
+                                        <xs:element name="age" type="ageType"/>
+                                        <xs:element name="grade" type="xs:integer"/>
                                         <xs:element name="address">
                                             <xs:complexType>
                                                 <xs:sequence>
@@ -26,7 +39,7 @@
                                             </xs:complexType>
                                         </xs:element>
                                     </xs:sequence>
-                                    <xs:attribute name="id" type="xs:string" use="required"/>
+                                    <xs:attribute name="id" type="xs:ID" use="required"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
@@ -42,7 +55,7 @@
                                         <xs:element name="subject" type="xs:string"/>
                                         <xs:element name="years_of_experience" type="xs:integer"/>
                                     </xs:sequence>
-                                    <xs:attribute name="id" type="xs:string" use="required"/>
+                                    <xs:attribute name="id" type="xs:ID" use="required"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
@@ -55,9 +68,9 @@
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="title" type="xs:string"/>
-                                        <xs:element name="credits" type="xs:integer"/>
+                                        <xs:element name="credits" type="creditsType"/>
                                     </xs:sequence>
-                                    <xs:attribute name="id" type="xs:string" use="required"/>
+                                    <xs:attribute name="id" type="xs:ID" use="required"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
@@ -73,7 +86,22 @@
                                         <xs:element name="teacher_id" type="xs:string"/>
                                         <xs:element name="schedule" type="xs:string"/>
                                     </xs:sequence>
-                                    <xs:attribute name="id" type="xs:string" use="required"/>
+                                    <xs:attribute name="id" type="xs:ID" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="departments">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="department" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="name" type="xs:string"/>
+                                        <xs:element name="location" type="xs:string"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:ID" use="required"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
@@ -82,5 +110,4 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
 </xs:schema>

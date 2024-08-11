@@ -1,7 +1,7 @@
-<!ELEMENT school (students, teachers, courses, classes)>
+<!ELEMENT school (students, teachers, courses, classes, departments)>
 <!ELEMENT students (student+)>
 <!ELEMENT student (name, age, grade, address)>
-<!ATTLIST student id CDATA #REQUIRED>
+<!ATTLIST student id ID #REQUIRED>
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT age (#PCDATA)>
 <!ELEMENT grade (#PCDATA)>
@@ -11,17 +11,21 @@
 <!ELEMENT zip (#PCDATA)>
 <!ELEMENT teachers (teacher+)>
 <!ELEMENT teacher (name, subject, years_of_experience)>
-<!ATTLIST teacher id CDATA #REQUIRED>
+<!ATTLIST teacher id ID #REQUIRED>
 <!ELEMENT subject (#PCDATA)>
 <!ELEMENT years_of_experience (#PCDATA)>
 <!ELEMENT courses (course+)>
 <!ELEMENT course (title, credits)>
-<!ATTLIST course id CDATA #REQUIRED>
+<!ATTLIST course id ID #REQUIRED>
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT credits (#PCDATA)>
 <!ELEMENT classes (class+)>
 <!ELEMENT class (course_id, teacher_id, schedule)>
-<!ATTLIST class id CDATA #REQUIRED>
+<!ATTLIST class id ID #REQUIRED>
 <!ELEMENT course_id (#PCDATA)>
 <!ELEMENT teacher_id (#PCDATA)>
 <!ELEMENT schedule (#PCDATA)>
+<!ELEMENT departments (department+)>
+<!ELEMENT department (name, location)>
+<!ATTLIST department id ID #REQUIRED>
+<!ELEMENT location (#PCDATA)>
